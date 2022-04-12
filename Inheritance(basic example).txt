@@ -1,0 +1,52 @@
+#include <iostream>
+#include<string>
+
+using namespace std;
+class person{
+public:
+    string name;
+    string id;
+    float cgpa;
+    int salary;
+    string department;
+    string post;
+    string account;
+
+    };
+
+    class student:public person
+    {
+    public:
+        string university;
+    };
+
+    class teacher:public person
+    {
+
+    };
+    class officer:public person
+    {
+    public:
+        string location;
+    };
+
+
+int main()
+{ student s1;
+s1.name="SUNAN";
+s1.id="18-768-5";
+s1.cgpa=4.00;
+cout<<s1.name<<","<<s1.id<<","<<s1.cgpa<<endl;
+teacher t1;
+t1.name="SUNAN";
+t1.department="CSE";
+t1.post="PROFESSOR";
+t1.account="12378";
+cout<<t1.name<<","<<t1.department<<","<<t1.post<<","<<t1.account<<endl;
+officer o1;
+o1.post="MANAGER";
+o1.salary=50000;
+o1.location="ANNEX 8";
+cout<<o1.post<<","<<o1.salary<<","<<o1.location<<endl;
+    return 0;
+}

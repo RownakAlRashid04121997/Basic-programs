@@ -1,0 +1,91 @@
+#include <iostream>
+#include<string>
+#include<stdlib.h>
+#include<ctime>
+
+using namespace std;
+
+class Movie{
+private:
+string title;
+string genre;
+float rating;
+public:
+  Movie(){};
+   Movie(string t,string g)
+{  title=t;
+      genre=g;
+      rating=(float)rand()/(float)RAND_MAX*10.1;
+      }
+    void printdetail()
+    {
+        cout<<"Movie name"<<title<<endl;
+        cout<<"Genre"<<genre<<endl;
+        cout<< "Rating:";
+        cout<<"%.1f"<<rating<<endl;
+        }
+
+    float getrating()
+    {
+        return rating;
+    }
+    };
+
+
+    int main()
+{
+    srand(time(0));
+    cout<<"The number of movies you want to rate"<<endl;
+    int index;
+    cin>>index;
+    cin.ignore(1000,'\n');
+    cout<<endl;
+    Movie* m1=new Movie[index];
+    string name;
+    string genre;
+    int i;
+    for(i=0;i<index;i++)
+    {
+        cout<<"Enter movie number"<<i+1<<"name"<<endl;
+        getline(cin,genre);
+        cout<<endl;
+        m1[i]={Movie(name,genre)};
+    }
+    cout<<endl<<"-------------------"<<endl<<"Lists of movie with details"<<endl<<endl;
+    for(i=0;i<index;i++)
+    {
+        cout<<i+1<<",";
+        m1[i].printdetail();
+        cout<<endl;
+    }
+    cout<<"-------------------"<<endl;
+    float maxrate=0.0,minrate=10.0;
+    int Maxmovieindex;
+    int Minmovieindex;
+    for(i=0;i<index;i++)
+    {
+        float temp=m1[i].getrating();
+        if(temp>maxrate){
+            maxrate=temp;
+            Maxmovieindex=i;
+        }
+    }
+    for(i=0;i<index;i++)
+    {
+        float temp=m1[i].getrating();
+        if(temp<minrate){
+            minrate=temp;
+            Minmovieindex=i;
+        }
+    }
+    cout<<endl<<"----------------"<<endl<<"Movie with highest rating"<<endl<<endl;
+    m1[Maxmovieindex].printdetail();
+    cout<<endl<<endl;
+    cout<<"Movie with lowest rating"<<endl<<endl;
+    m1[Minmovieindex].printdetail();
+    cout<<endl<<"-----------------"<<endl;
+    delete [ ]m1;
+
+
+    return 0;
+}

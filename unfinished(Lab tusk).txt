@@ -1,0 +1,71 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+class Resturant
+{
+    protected:
+    string name;
+    string address;
+    double rating;
+public:
+    void setname(string i)
+    {
+        name=i;
+    }
+    void setaddress(string j)
+    {
+        address=j;
+    }
+    void setrating(double k)
+    {
+        rating=k;
+    }
+    string getname()
+    {
+        return name;
+    }
+    string getaddress()
+    {
+        return address;
+    }
+    double getratimg()
+    {
+        return rating;
+    }
+    void Showresturantdetail()
+    {
+        cout<<name<<endl;;
+        cout<<address<<endl;
+        cout<<rating<<endl;
+    }
+
+};
+
+class Chaineseresturant:public Resturant
+{   protected:
+    string *menu;
+public:
+     Chaineseresturant()
+     {
+         cout<<"Default constructor"<<endl;
+     }
+
+};
+
+int main()
+{
+     Resturant r1;
+     r1.setname("ABC");
+     r1.setaddress("DEF");
+     r1.setrating(6.5);
+     r1.getname();
+     r1.getaddress();
+     r1.getratimg();
+     r1.Showresturantdetail();
+
+
+
+    r1.Showresturantdetail();
+    return 0;
+}

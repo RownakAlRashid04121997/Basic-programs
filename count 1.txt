@@ -1,0 +1,36 @@
+#include <iostream>
+
+
+using namespace std;
+int _count;
+
+class student
+{
+public:
+    string id;
+
+    student();
+    ~student();
+};
+student::student()
+{
+    _count++;
+    cout<<"construction"<<endl;
+}
+student::~student()
+{
+    cout<<"destruction"<<endl;
+}
+
+
+
+int main()
+{
+student s1;
+cout<<_count<<endl;
+student s2;
+cout<<_count<<endl;
+student s3;
+cout<<_count<<endl;
+return 0;
+}

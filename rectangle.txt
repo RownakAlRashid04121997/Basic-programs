@@ -1,0 +1,21 @@
+#include <iostream>
+
+
+using namespace std;
+
+class rectangle
+{
+    public:
+    double length;
+    double width;
+};
+
+int main()
+{
+    rectangle r;
+    r.length= 7.5;
+    r.width=3.4;
+    cout <<r.length<< endl;
+    cout <<r.width<< endl;
+    return 0;
+}

@@ -1,0 +1,54 @@
+#include <iostream>
+
+using namespace std;
+class rec{
+private:
+    int length;
+    int height;
+    int width;
+public:
+    rec();
+    rec(int l,int h,int w);
+    volume(int x,int y,int z);
+    ~rec();
+
+    };
+    rec::rec()
+    {
+        cout<<"construction1"<<endl;
+    }
+    rec::rec(int l,int h,int w)
+    {
+        length=l;
+        height=h;
+        width=w;
+        cout<<length<<':'<<height<<':'<<width<<endl;
+        cout<<"construction2"<<endl;
+    }
+
+    rec::volume(int x,int y,int z)
+    {
+        int Area;
+        Area=x*y*z;
+        cout<<Area<<endl;
+    }
+    rec::~rec()
+    {
+        cout<<"destruction1"<<endl;
+    }
+
+
+
+
+int main()
+{
+    rec f;
+    rec();
+    int a,b,c;
+    cin>>a;
+    cin>>b;
+    cin>>c;
+    rec(a,b,c);
+    f.volume(a,b,c);
+    return 0;
+}

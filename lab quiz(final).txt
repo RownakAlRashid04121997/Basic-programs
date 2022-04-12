@@ -1,0 +1,80 @@
+#include <iostream>
+
+using namespace std;
+class number{
+protected:
+    double realpart;
+    double imaginarypart;
+public:
+    double i,k;
+    number()
+    {
+        cout<<"Default constructor(number)"<<endl;
+    }
+    number(double i)
+    {
+        realpart=i;
+    }
+    number(double i,double k)
+    {
+        realpart=i;
+        imaginarypart=k;
+
+        cout<<"Parameterized constructor called"<<endl;
+    }
+    double getrealpart()
+    {
+        return realpart;
+    }
+    double getimaginarypart()
+    {
+        return imaginarypart;
+    }
+    };
+
+
+    class realnumber:public number{
+        public:
+        double l;
+        realnumber()
+        {
+            cout<<"Default constructor(real)"<<endl;
+        }
+        realnumber(double l):number(i){
+        this->l=l;}
+        double getimaginarypart()
+        {
+            return 0.0;
+        }
+    };
+
+
+    class complexnumber:public number{
+    public:
+        double m,n;
+        complexnumber()
+        {
+            cout<<"Default constructor(complex)"<<endl;
+        }
+        complexnumber(double m,double n):number(i,k)
+        {
+            this->m=m;
+            this->n=n;
+            cout<<"parameterized constructor(complex)"<<endl;
+        }
+        getimaginarypart()
+        {
+            return imaginarypart;
+        }
+    };
+
+int main()
+{     number *o;
+
+      number(2.00,5.00);
+
+      cout<<o->realnumber::getimaginarypart()<<endl;
+      cout<<o->complexnumber::getimaginarypart()<<endl;;
+
+    return 0;
+}

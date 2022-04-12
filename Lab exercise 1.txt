@@ -1,0 +1,71 @@
+#include <iostream>
+
+using namespace std;
+
+
+class time
+    {
+        private:
+        double hour;
+        double minute;
+        double second;
+
+        public:
+        void sethour(double h)
+        {
+
+          if (h>0 && h<=12)
+                hour=h;
+            else
+                cout<<"invalid\n";
+
+        }
+        void setminute(double m)
+        {
+
+            if(m>=0 && m<60)
+                minute=m;
+            else
+                cout<<"invalid\n";
+        }
+        void setsecond (double s)
+        {
+
+            if(s>=0 && s<60)
+                second=s;
+            else
+                cout<<"invalid\n";
+
+        }
+        double gethour()
+        {
+            return hour;
+        }
+        double getminute()
+        {
+            return minute;
+        }
+        double getsecond()
+        {
+            return second;
+        }
+
+    void print()
+    {
+        cout<<hour<<':'<<minute<<':'<<second<<endl;
+    }
+    };
+    int main()
+    {
+        time y;
+        int f;
+        cin>>f;
+        y.sethour(f);
+        y.setminute(f);
+        y.setsecond(f);
+        y.print();
+
+        return 0;
+    }
+
+

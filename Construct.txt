@@ -1,0 +1,40 @@
+#include <iostream>
+
+using namespace std;
+
+ class time{
+     private:
+    int hour;
+    int minute;
+    int second;
+public:
+    time();
+    time(int h,int m,int s);
+    ~time();
+
+};
+
+ time::time()
+    {
+        cout<<"construction1"<<endl;
+    }
+    time::time(int h,int m,int s)
+    {
+        hour=h;
+        minute=m;
+        second=s;
+        cout<<"construction 2"<<endl;
+
+    }
+    time::~time()
+    {
+        cout<<"destruction"<<endl;
+    }
+
+int main()
+{
+    time();
+    time(5,6,7);
+    return 0;
+
+}

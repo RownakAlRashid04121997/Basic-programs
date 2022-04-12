@@ -1,0 +1,44 @@
+#include <iostream>
+
+using namespace std;
+class A{
+protected:
+    int height;
+public:
+    A(int i)
+    {cout<<"Constructor of a"<<endl;
+    }
+    };
+
+    class B{
+    protected:
+    int width;
+        public:
+            B(int j)
+            {cout<<"Constructor of B"<<endl;
+            }
+            };
+
+
+        class C:public A,public B{
+        public:
+            C(int h,int y):A(h),B(y)
+            {
+                height=h;
+                width=y;
+                cout<<"constructor of C"<<endl;
+            }
+            void display()
+            {
+                cout<<height<<","<<width<<endl;
+            }
+            };
+
+int main()
+{
+
+
+    C c1(4,5);
+    c1.display();
+    return 0;
+}

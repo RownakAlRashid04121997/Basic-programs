@@ -1,0 +1,68 @@
+#include <iostream>
+#include<string>
+
+using namespace std;
+
+
+class Shape
+{
+protected:
+    double height,width;
+
+public:
+    Shape(){}
+    Shape(double h, double w)
+    {
+        height = h;
+        width = w;
+    }
+
+    virtual double area()
+    {
+        cout<<"area of Shape called\n";
+    }
+};
+
+class Rectangle: public Shape
+{
+public:
+    Rectangle(){}
+    Rectangle(double h, double w):Shape(h,w){
+    cout<<"hji"<<endl;}
+
+    double area()
+    {
+        cout<<"area of Rectangle class called\n";
+        return height*width;
+    }
+};
+
+class Triangle: public Shape
+{
+public:
+    Triangle(){}
+    Triangle(double h, double w):Shape(h,w){}
+
+    double area()
+    {
+        cout<<"area of Triangle class called\n";
+        return 0.5*height*width;
+    }
+};
+
+
+int main()
+{
+    Shape *s;
+    Shape r;
+    s=&r;
+    s->area();
+    Rectangle r1;
+    s=&r1;
+    s->area();
+    Triangle t;
+    s=&t;
+    s->area();
+
+    return 0;
+}

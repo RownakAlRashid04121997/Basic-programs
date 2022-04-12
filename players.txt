@@ -1,0 +1,8 @@
+sunan,78.9
+sam,45.89
+adi,56.75
+himu,78.9
+simi,78.22
+odrita,86.76
+farhan,67.23
+tom,56.78

@@ -1,0 +1,22 @@
+#include <iostream>
+#include<fstream>
+#include <string>
+
+using namespace std;
+
+int main()
+{     ofstream f;
+     f.open("PLayer's info.txt");
+    cout << "Entry player's name ,score and ,money" << endl;
+    string name;
+    float score;
+    float money;
+    int i;
+    while(cin>>name>>score>> money)
+    {
+      f<<name<<','<<score<<','<<money<<endl;
+    }
+
+    f.close();
+    return 0;
+}

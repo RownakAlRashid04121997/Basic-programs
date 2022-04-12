@@ -1,0 +1,29 @@
+#include <iostream>
+
+
+using namespace std;
+
+class gradepoint
+{
+    public:
+    double PL1;
+    double PL2;
+    double Discrete;
+    double average()
+    {
+        double A;
+        A=(PL1+PL2+Discrete)/3;
+        return A;
+     }
+};
+
+int main()
+{
+    gradepoint s1;
+    s1.PL1= 60.0;
+    s1.PL2=75.5;
+    s1.Discrete=80;
+    cout<< "Average"<<s1.average()<<endl;
+     return 0;
+
+}

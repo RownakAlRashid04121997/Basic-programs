@@ -1,0 +1,39 @@
+#include <iostream>
+
+using namespace std;
+class Movie{
+int rating;
+public:
+    Movie(int r)
+    {
+        rating=r;
+    }
+    int getrating()
+    {
+        return rating;
+    }
+    };
+int main()
+{
+    Movie values[4]={3,6,9,2};
+    int max,min;
+    max=values[0].getrating();
+    min=values[0].getrating();
+    for(int i=0;i<4;i++)
+    {
+        if(values[i].getrating()>max)
+        {
+            max=values[i].getrating();
+        }
+        if(values[i].getrating()<min)
+        {
+            min=values[i].getrating();
+        }
+    }
+    cout<<"maximum value is"<<"-"<<max<<endl;
+    cout<<"minimun valueis"<<"-"<<min<<endl;
+
+
+
+   return 0;
+}

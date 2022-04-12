@@ -1,0 +1,42 @@
+#include <iostream>
+
+
+using namespace std;
+
+
+class student
+{
+public:
+    string id;
+    static int _count;
+
+    student();
+    ~student();
+};
+student::student()
+{
+    _count++;
+    cout<<"construction"<<endl;
+}
+student::~student()
+{
+    cout<<"destruction"<<endl;
+}
+
+int student::_count;/*for creating the memory location for  count*/
+
+
+
+int main()
+{
+     int i=5;
+cout<<student::_count<<endl;
+    student::_count=5;
+student s1;
+cout<<student::_count<<endl;
+student s2;
+cout<<student::_count<<endl;
+student s3;
+cout<<student::_count<<endl;
+return 0;
+}

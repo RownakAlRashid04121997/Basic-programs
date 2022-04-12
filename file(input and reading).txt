@@ -1,0 +1,30 @@
+#include <iostream>
+#include<fstream>
+#include <string>
+
+using namespace std;
+
+int main()
+{ fstream f("players.txt",ios::in|ios::out|ios::app);
+if(!f.is_open()){
+    cout<<"error opening the file"<<endl;
+    }else{cout << "file opened successfully" << endl;}
+    cout<<"writing file"<<endl;
+string name;
+float score;
+cout<<"Enter name and score"<<endl;
+while(cin>>name>>score)
+{
+    f<<name<<','<<score<<endl;
+}
+f.seekg(0);
+cout<<"Reading file"<<endl;
+string line;
+while(f.good())
+{
+    getline(f,line);
+    cout<<line<<endl;
+}
+
+    return 0;
+}

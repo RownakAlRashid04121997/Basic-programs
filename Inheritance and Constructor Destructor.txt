@@ -1,0 +1,69 @@
+#include<iostream>
+using namespace std;
+
+
+class A
+{
+protected:
+    int i;
+public:
+    A(){cout<<"Default Constructor of A\n";}
+    A(int i)
+    {
+        cout<<"Parameterized constructor of A\n";
+        this->i=i;
+    }
+    ~A(){cout<<"Destructor of A\n";}
+};
+
+class B: public A
+{
+protected:
+    int j;
+public:
+    B(){cout<<"Default Constructor of B\n";}
+    B(int i, int j):A(i)
+    {
+        cout<<"Parameterized constructor of B\n";
+        this->j=j;
+    }
+    ~B(){cout<<"Destructor of B\n";}
+};
+
+
+class C: public B
+{
+    int k;
+public:
+    C()
+    {
+        cout<<"Default Constructor of C\n";
+    }
+    C(int i, int j, int k):B(i,j)
+    {
+        cout<<"Parameterized constructor of C\n";
+        this->k=k;
+    }
+
+    void print()
+    {
+        cout<<"i = "<<i<<endl;
+        cout<<"j = "<<j<<endl;
+        cout<<"k = "<<k<<endl;
+    }
+    ~C(){cout<<"Destructor of C\n";}
+};
+
+
+int main()
+{
+    B b1;
+    B b2(3,4);
+    
+  return 0;
+}
+
+
+
+
+

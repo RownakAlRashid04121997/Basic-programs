@@ -1,0 +1,32 @@
+#include <iostream>
+
+
+using namespace std;
+
+class rectangle
+{
+    public:
+    double length;
+    double width;
+};
+
+int main()
+{
+    rectangle r;
+    r.length= 7.5;
+    r.width=3.4;
+    cout <<r.length<< endl;
+    cout <<r.width<< endl;
+    cout<<"Area;"<<r.length*r.width<<endl;
+
+    rectangle r2;
+    r2.length= 9.5;
+    r2.width=6.4;
+    cout <<r2.length<< endl;
+    cout <<r2.width<< endl;
+    cout<<"Area 2;"<<r2.length*r2.width<<endl;
+
+
+
+    return 0;
+}
